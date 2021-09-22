@@ -1,8 +1,11 @@
 from django.db import models
 
 class API(models.Model):
-    title = models.CharField(max_length=100)
-    desc = models.TextField()
+    id = models.IntegerField(primary_key=True)
+    legajo = models.FloatField()
+    agente = models.CharField(max_length=100)
+    secretaria = models.CharField(max_length=100)
+    
 
     def __str__(self):
-        return self.title
+        return  self.agente

@@ -3,8 +3,8 @@ from .models import API
 # Register your models here.
 
 class search(admin.ModelAdmin):
-    list_display = ('title', 'desc')
-    search_fields = ('title', 'desc')
+    list_display = ('legajo', "agente")
+    search_fields = ('legajo', 'secretaria')
 
 
 

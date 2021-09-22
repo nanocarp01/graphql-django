@@ -5,7 +5,7 @@ from .models import API
 class ApisType(DjangoObjectType):
     class Meta:
         model = API
-        fields = ("id", "title", "desc")
+        fields = ("id","legajo", "secretaria", "agente")
     
 class Query(graphene.ObjectType):
     all_apis = graphene.List(ApisType)
