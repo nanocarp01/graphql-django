@@ -1,0 +1,54 @@
+    <!--<form method="post">
+        {% csrf_token %}
+                {{ form.as_p }}
+        <input type="submit" class="button is-success is-center" id="Login" value="Login"></input>
+        {% for message in messages %}
+            <p class="item" id="messages">{{ message }}</p>
+        {% endfor%}
+    </form>-->
+
+    <div class="columns">
+        <div class="column is-6 is-offset-3">
+            <h1 class="title">Log in</h1>
+    
+            <form method="post" action=".">
+                {% csrf_token %}
+        
+                <input type="hidden" name="next" value="{{ next }}">
+        
+                <div class="field">
+                    <label>Username</label>
+        
+                    <div clas="control">
+                        <input type="text" class="input" name="username" id="id_username">
+                    </div>
+                </div>
+        
+                <div class="field">
+                    <label>Password</label>
+                    
+                    <div clas="control">
+                        <input type="password" class="input" name="password" id="id_password">
+                    </div>
+                </div>
+        
+                {% if form.errors %}
+                    <div class="notification is-danger">
+                        Your username and password didn't match! Please try again!
+                    </div>
+                {% endif %}
+        
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-success">Iniciar</button>
+                        <a href="{% url 'APIg:index' %}" class="button is-success">Volver</a>
+                        <br>
+                        <a href="{% url 'authi:password_reset' %}">Olvide mi contraseña</a>
+                        <br>
+                        <a href="{% url 'authi:register' %}">Resgistrar</a>
+                    </div>
+                </div>
+               
+            </form>
+        </div>
+    </div>

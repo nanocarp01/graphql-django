@@ -1,0 +1,9 @@
+<form action="{% url 'authi:register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-success" id="Register" value="Registrar"></input>
+    <a href="{% url 'APIg:index' %}" class="button is-success">Volver</a>
+    {% for message in messages %}
+        <p class="item" id="messages">{{ message }}</p>
+    {% endfor%}
+</form>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPHQL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    <div class="navbar-item" >
+        <a href="{% url 'APIg:graphql' %}" class="button is-success">GraphQL</a>
+        
+    </div>
+    <br>
+    <div class="navbar-item">
+        <a href="{% url 'logout' %}" class="button is-success">Cerrar Sesión</a>
+    </div>
+    {% else %}
+    <div class="navbar-item" >
+        <div class="buttons" >
+            <a href="{% url 'authi:register' %}" class="button is-info"><strong>Registrar</strong></a>
+            <a href="{% url 'login' %}" class="button is-link">Ingresar</a>
+        </div>
+    </div>
+{% endif %}
+    
+</body>
+</html>
