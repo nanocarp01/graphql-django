@@ -7,6 +7,6 @@ app_name = 'APIg'
 
 urlpatterns = [
     # Only a single URL to access GraphQL
-    path("", GraphQLView.as_view(graphiql=True, schema=schema), name='graphql'),
+    path("gql", GraphQLView.as_view(graphiql=True, schema=schema), name='graphql'),
 
 ]
