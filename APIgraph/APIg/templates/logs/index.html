@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,23 +7,17 @@
     <title>GRAPHQL</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     {% if request.user.is_authenticated %}
     <div class="navbar-item" >
         <a href="{% url 'APIg:graphql' %}" class="button is-success">GraphQL</a>
-        
-    </div>
-    <br>
-    <div class="navbar-item">
-        <a href="{% url 'logout' %}" class="button is-danger">Cerrar Sesión</a>
     </div>
     {% else %}
     <div class="navbar-item" >
         <div class="buttons" >
-            <a href="{% url 'authi:register' %}" class="button is-info"><strong>Registrar</strong></a>
-            <a href="{% url 'login' %}" class="button is-link">Ingresar</a>
+            <a href="{% url 'register' %}" class="button is-info"><strong>Sign up</strong></a>
+            <a href="{% url 'login' %}" class="button is-link">Log in</a>
         </div>
     </div>
 {% endif %}
